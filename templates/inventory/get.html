@@ -1,0 +1,21 @@
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+    <h3>Inventory</h3>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Amount</th>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td> {{ r[0] }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
