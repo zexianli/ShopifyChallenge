@@ -1,40 +1,41 @@
 {% block title %}Add inventory{% endblock %}
 
 {% block content %}
-    <form method="POST">
-        <fieldset><legend>Add inventory</legend>
-            <label for="name">Name <span class="required">*</span></label><br>
-            <input type="text" id="name" name="name" required><br>
+<form method="POST">
+    <fieldset>
+        <legend>Add inventory</legend>
+        <label for="name">Name <span class="required">*</span></label><br>
+        <input type="text" id="name" name="name" required><br>
 
-            <label for="price">Price <span class="required">*</span></label><br>
-            <input type="number" id="price" name="price" required><br>
+        <label for="price">Price <span class="required">*</span></label><br>
+        <input type="number" id="price" name="price" required><br>
 
-            <label for="amount">Amount <span class="required">*</span></label><br>
-            <input type="number" id="amount" name="amount" required><br>
-          
-            <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+        <label for="amount">Amount <span class="required">*</span></label><br>
+        <input type="number" id="amount" name="amount" required><br>
 
-    <div>
-        <p>{{message}}</p>
-    </div>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
 
-    <h3>Inventory</h3>
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Amount</th>
-        </thead>
-        <tbody>
-            {% for r in rows %}
-            <tr>
-                <td> {{ r[0] }} </td>
-                <td> {{ r[1] }} </td>
-                <td> {{ r[2] }} </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div>
+    <p>{{message}}</p>
+</div>
+
+<h3>Inventory</h3>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Amount</th>
+    </thead>
+    <tbody>
+        {% for r in rows %}
+        <tr>
+            <td> {{ r[0] }} </td>
+            <td> {{ r[1] }} </td>
+            <td> {{ r[2] }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

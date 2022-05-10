@@ -1,25 +1,50 @@
-Flask is a minimal Python framework that helps you create a web server. 
+## Getting Started:
+First you need to create a virtual environment to run the application, then install the dependencies. 
 
-Let's take a look at the code we have:
-
-```python
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<h1>Hello, World!</h1>"
+Run these commands inside the directory:
+### For Linux:
 ```
-	
-What did that code do?
+python3 -m venv flaskApp
+source flaskApp/bin/activate
+pip3 install --upgrade pip
+pip install Flask
+```
 
-First we `import` the `Flask` class. An instance of this class will be our WSGI application.
+### For Windows:
+```
+py -3 -m venv flaskApp
+flaskApp\Scripts\activate
+pip3 install --upgrade pip
+```
 
-Next we create an instance of this class. The first argument is the name of the application’s module or package. `__name__` is a convenient shortcut for this that is appropriate for most cases. This is needed so that Flask knows where to look for resources such as templates and static files.
+Once you have installed all the requirements stated above, you can run the Flask application with the following command:
+```
+python -m main run
+```
 
-We then use the `route()` decorator to tell Flask what URL should trigger our function. In this case we use `/` routh, which is the default route of any website.
+## Using the CRUD
 
-The function returns the message we want to display in the user’s browser. The default content type is HTML, so HTML in the string will be rendered by the browser.
+After opening the link to the CRUD. You can access the directory by going to 
+```
+http://127.0.0.1:8080/inventory
+```
+### *This link will show all the current items in inventory*
 
-To learn more, checkout the [official guide](https://flask.palletsprojects.com/en/2.0.x/quickstart/).
+
+## Operations
+
+### ADD
+```
+http://127.0.0.1:8080/inventory/add
+```
+
+### Update
+```
+http://127.0.0.1:8080/inventory/edit
+```
+
+### Delete
+This url also shows the reason why an item was removed
+```
+http://127.0.0.1:8080/inventory/delete
+```
